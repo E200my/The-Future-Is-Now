@@ -15,7 +15,7 @@
 }
 
 :root {
-  --main-color: #f0b30f;
+  --main-color: #7c96d1;
 }
 
 .theme-text {
@@ -116,13 +116,13 @@
   background: transparent;
   border: 1px solid #333;
   transform: scale(1.2);
-  background: rgb(0, 184, 148);
+  background: #7c96d1;
 }
 
 .card:hover .box i {
-  background: rgb(0, 184, 148);
+  background: #7c96d1;
   color: #fff;
-  border-color: rgb(0, 184, 148);
+  border-color: #7c96d1;
 }
 
 .card::after {
@@ -139,7 +139,7 @@
 
 .card:hover::after {
   transform: rotate(13deg);
-  background-color: rgb(0, 184, 148);
+  background-color: #7c96d1;
 }
 
 /* Responsive Design */
@@ -205,7 +205,7 @@
 }
 
 .carousel .list .item .topic {
-  color: orange;
+  color: #7c96d1;
 }
 
 .carousel .list .item .buttons {
@@ -397,7 +397,7 @@
   z-index: 1000;
   width: 0%;
   height: 3px;
-  background-color: orange;
+  background-color: #7c96d1;
   left: 0;
   top: 0;
 }

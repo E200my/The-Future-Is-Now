@@ -47,7 +47,7 @@
         display: inline-block;
         width: 7px;
         height: 130px;
-        background-color: orange;
+        background-color: #7c96d1;
         position: absolute;
         left: 5px;
         right: 0;
@@ -80,7 +80,7 @@
     padding: 22px 73px 23px 72px;
     gap: 0px;
     border-radius: 10px;
-    border: 1px solid orange;
+    border: 1px solid #7c96d1;
     opacity: 0px;
     color: white;
 
@@ -148,7 +148,7 @@
         padding: 15px 50px 15px 50px;
         gap: 0px;
         border-radius: 10px;
-        border: 1px solid orange;
+        border: 1px solid #7c96d1;
         opacity: 0px;
         color: white;
 
