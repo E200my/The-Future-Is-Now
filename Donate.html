@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Logo icon -->
+    <link rel="icon" href="images/logo3.jpg" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.0.0/mdb.min.css" rel="stylesheet" />
+    <!--AOS CSS-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Main style sheet -->
+    <link rel="stylesheet" href="donate.css">
+    <title>Donate</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #7c96d1; color: white;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><img src="images/logo3.png" alt="Logo"
+                    style="height: 50px; width: 80px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Who are we.html">Who Are We</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Project.html">Project</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#FAQ">Media</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-but"><a class="btn btn-outline-light" href="#">Contact Us</a></li>
+                    <li class="nav-but"><a class="btn btn-outline-light" href="#">Donate</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <div class="middle">
+                <h1 class="text-white fw-bold display-3" data-aos="fade-right">Your Donation Helps to build
+                    <span class="theme-text">a better future</span>
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <div class="container pt-5" style="max-width: 500px;" data-aos="fade-UP">
+        <div class="card">
+            <ul class="nav nav-pills mb-3" id="payment-tabs" role="tablist">
+                <li class="nav-item">
+                    <a href="#nav-tab-card" class="nav-link active" data-bs-toggle="pill" role="tab"
+                        aria-controls="nav-tab-card" aria-selected="true">
+                        <i class="fa fa-credit-card" aria-hidden="true"></i> Credit Card
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#nav-tab-paypal" class="nav-link" data-bs-toggle="pill" role="tab"
+                        aria-controls="nav-tab-paypal" aria-selected="false">
+                        <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#nav-tab-bank" class="nav-link" data-bs-toggle="pill" role="tab"
+                        aria-controls="nav-tab-bank" aria-selected="false">
+                        <i class="fa fa-bank" aria-hidden="true"></i> Bank Transfer
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content p-3">
+                <!-- Credit Card Tab -->
+                <div class="tab-pane fade show active" id="nav-tab-card" role="tabpanel">
+                    <form id="credit-card-form">
+                        <div class="form-group">
+                            <label for="card-name">Full Name (on the card)</label>
+                            <input type="text" class="form-control" id="card-name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="card-number"
+                                    placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                                <div class="input-group-append mt-2">
+                                    <i class="fab fa-cc-visa fa-2x"></i>
+                                    <i class="fab fa-cc-amex fa-2x mx-3"></i>
+                                    <i class="fab fa-cc-mastercard fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiration">Expiration</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="expiration-month" placeholder="MM"
+                                    maxlength="2" required>
+                                <input type="text" class="form-control" id="expiration-year" placeholder="YY"
+                                    maxlength="2" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV <i class="fa fa-question-circle" aria-hidden="true"></i></label>
+                            <input type="text" class="form-control" id="cvv" placeholder="123" maxlength="3" required>
+                        </div>
+                        <br>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary">Confirm Payment</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- PayPal Tab -->
+                <div class="tab-pane fade text-center" id="nav-tab-paypal" role="tabpanel">
+                    <p>PayPal is one of the easiest ways to donate to us online.</p>
+                    <button type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login to
+                        PayPal</button>
+                    <p class="mt-3">or</p>
+                    <button type="button" class="btn btn-primary"><i class="fas fa-user"></i> Create New
+                        Account</button>
+                </div>
+
+                <!-- Bank Transfer Tab -->
+                <div class="tab-pane fade" id="nav-tab-bank" role="tabpanel">
+                    <p>Bank account details:</p>
+                    <dl>
+                        <dt>BANK:</dt>
+                        <dd>THE WORLD BANK</dd>
+                        <dt>Account Number:</dt>
+                        <dd>2465575888</dd>
+                        <dt>IBAN:</dt>
+                        <dd>1234567897654C</dd>
+                    </dl>
+                    <p><strong>Note:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis temporibus
+                        consequatur molestiae officia eius expedita.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/9.0.0/mdb.umd.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('credit-card-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const cardName = document.getElementById('card-name').value.trim();
+            const cardNumber = document.getElementById('card-number').value.trim();
+            const expirationMonth = document.getElementById('expiration-month').value.trim();
+            const expirationYear = document.getElementById('expiration-year').value.trim();
+            const cvv = document.getElementById('cvv').value.trim();
+
+            // Validate inputs
+            if (!cardName || !cardNumber || !expirationMonth || !expirationYear || !cvv) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+                alert('Please enter a valid 16-digit card number.');
+                return;
+            }
+
+            if (expirationMonth < 1 || expirationMonth > 12 || isNaN(expirationMonth)) {
+                alert('Please enter a valid expiration month (01-12).');
+                return;
+            }
+
+            if (expirationYear.length !== 2 || isNaN(expirationYear)) {
+                alert('Please enter a valid 2-digit expiration year.');
+                return;
+            }
+
+            if (cvv.length !== 3 || isNaN(cvv)) {
+                alert('Please enter a valid 3-digit CVV.');
+                return;
+            }
+
+            // Display success message
+            alert('Payment successful! Thank you for your donation.');
+            document.getElementById('credit-card-form').reset(); // Reset the form
+        });
+    </script>
+    <!---AOS JS--->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

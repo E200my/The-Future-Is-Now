@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="test.css">
+    <title>Donation</title>
+</head>
+
+<body>
+
+    <!-- Payment Section -->
+<div class="container pt-5" style="max-width: 500px;">
+    <div class="card">
+      <ul class="nav nav-pills mb-3" id="payment-tabs" role="tablist">
+        <li class="nav-item">
+          <a href="#nav-tab-card" class="nav-link active" data-bs-toggle="pill" role="tab" aria-controls="nav-tab-card" aria-selected="true">
+            <i class="fa fa-credit-card" aria-hidden="true"></i> Credit Card
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#nav-tab-paypal" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="nav-tab-paypal" aria-selected="false">
+            <i class="fab fa-paypal" aria-hidden="true"></i> PayPal
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#nav-tab-bank" class="nav-link" data-bs-toggle="pill" role="tab" aria-controls="nav-tab-bank" aria-selected="false">
+            <i class="fa fa-bank" aria-hidden="true"></i> Bank Transfer
+          </a>
+        </li>
+      </ul>
+      <div class="tab-content p-3">
+        <!-- Credit Card Tab -->
+        <div class="tab-pane fade show active" id="nav-tab-card" role="tabpanel">
+          <form id="credit-card-form">
+            <div class="form-group">
+              <label for="card-name">Full Name (on the card)</label>
+              <input type="text" class="form-control" id="card-name" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="card-number">Card Number</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="card-number" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+                <div class="input-group-append mt-2">
+                  <i class="fab fa-cc-visa fa-2x"></i>
+                  <i class="fab fa-cc-amex fa-2x mx-3"></i>
+                  <i class="fab fa-cc-mastercard fa-2x"></i>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="expiration">Expiration</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="expiration-month" placeholder="MM" maxlength="2" required>
+                <input type="text" class="form-control" id="expiration-year" placeholder="YY" maxlength="2" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cvv">CVV <i class="fa fa-question-circle" aria-hidden="true"></i></label>
+              <input type="text" class="form-control" id="cvv" placeholder="123" maxlength="3" required>
+            </div>
+            <div class="form-group text-center">
+              <button type="submit" class="btn btn-primary">Confirm Payment</button>
+            </div>
+          </form>
+        </div>
+  
+        <!-- PayPal Tab -->
+        <div class="tab-pane fade text-center" id="nav-tab-paypal" role="tabpanel">
+          <p>PayPal is one of the easiest ways to donate to us online.</p>
+          <button type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login to PayPal</button>
+          <p class="mt-3">or</p>
+          <button type="button" class="btn btn-primary"><i class="fas fa-user"></i> Create New Account</button>
+        </div>
+  
+        <!-- Bank Transfer Tab -->
+        <div class="tab-pane fade" id="nav-tab-bank" role="tabpanel">
+          <p>Bank account details:</p>
+          <dl>
+            <dt>BANK:</dt>
+            <dd>THE WORLD BANK</dd>
+            <dt>Account Number:</dt>
+            <dd>2465575888</dd>
+            <dt>IBAN:</dt>
+            <dd>1234567897654C</dd>
+          </dl>
+          <p><strong>Note:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis temporibus consequatur molestiae officia eius expedita.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <script>
+        document.getElementById('credit-card-form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Get form values
+  const cardName = document.getElementById('card-name').value.trim();
+  const cardNumber = document.getElementById('card-number').value.trim();
+  const expirationMonth = document.getElementById('expiration-month').value.trim();
+  const expirationYear = document.getElementById('expiration-year').value.trim();
+  const cvv = document.getElementById('cvv').value.trim();
+
+  // Validate inputs
+  if (!cardName || !cardNumber || !expirationMonth || !expirationYear || !cvv) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+    alert('Please enter a valid 16-digit card number.');
+    return;
+  }
+
+  if (expirationMonth < 1 || expirationMonth > 12 || isNaN(expirationMonth)) {
+    alert('Please enter a valid expiration month (01-12).');
+    return;
+  }
+
+  if (expirationYear.length !== 2 || isNaN(expirationYear)) {
+    alert('Please enter a valid 2-digit expiration year.');
+    return;
+  }
+
+  if (cvv.length !== 3 || isNaN(cvv)) {
+    alert('Please enter a valid 3-digit CVV.');
+    return;
+  }
+
+  // Display success message
+  alert('Payment successful! Thank you for your donation.');
+  document.getElementById('credit-card-form').reset(); // Reset the form
+});
+    </script>
+</body>
+
+</html>

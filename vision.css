@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar .navbar-nav .nav-item a {
+  padding: 15px;
+}
+
+.navbar .navbar-nav .nav-but {
+  padding: 10px;
+}
+
+:root {
+  --main-color: #7c96d1;
+}
+
+.theme-text {
+  color: var(--main-color);
+}
+
+.header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url(images/Nigerian-children\ \(1\).png);
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0px;
+}
+
+.middle {
+  height: 80vh;
+  width: 80%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.middle h1 {
+  font-size: 70px;
+}
+
+/* overview start */
+.overview {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.overview-head {
+    font-family: Montserrat;
+    font-size: 35px;
+    font-weight: 600 !important;
+    line-height: 42.67px;
+    color: #000000;
+}
+
+.begin {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.94px;
+}
+
+.overview-word {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500 !important;
+    line-height: 24.24px;
+    text-align: left;
+    color: #000000;
+    position: relative;
+}
+
+.overview-word-2 {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500 !important;
+    line-height: 24.24px;
+    text-align: left;
+    color: #000;
+    position: relative;
+    margin-top: 98px;
+}
+
+.overview-beginn {
+    padding-left: 50px !important;
+}
+
+.overview-row-ii {
+    margin-top: 100px !important;
+}
+
+.mission-word {
+    padding-left: 60px !important;
+    padding-top: 50px;
+}
+
+.future-col {
+    padding-left: 80px !important;
+}
+
+@media (max-width: 788px) {
+    .overview-head {
+        font-family: Montserrat;
+        font-size: 20px !important;
+        font-weight: 600 !important;
+        line-height: 42.67px;
+        color: #000000;
+    }
+
+    .begin {
+        font-size: 10px !important;
+    }
+
+    .overview-beginn {
+        padding-left: 10px !important;
+    }
+
+    .mission-word {
+        padding-left: 10px !important;
+        padding-top: 50px !important;
+    }
+
+    .future-col {
+        padding-left: 10px !important;
+        padding-top: 40px;
+    }
+
+    .overview-word {
+        font-family: Poppins;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        line-height: 24.24px;
+        text-align: left;
+        color: #000000;
+        position: relative;
+    }
+}
+
+/* overview stop */
