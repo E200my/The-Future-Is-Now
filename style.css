@@ -613,3 +613,113 @@
   }
 }
 /* Responsive Counter End */
+
+/* Card Hover Effect*/
+/* Card Hover Effect */
+.wrapper {
+  padding: 60px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service {
+  width: 1100px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.single-img {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column-reverse;
+  width: 325px;
+  height: 450px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.single-img:hover {
+  transform: translateY(-9px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.25);
+}
+
+.img-one {
+  background-image: url('images/TFN children.png');
+}
+
+.img-two {
+  background-image: url('images/TFN children 2.png');
+}
+
+.img-three {
+  background-image: url('images/TFN children 4.png');
+}
+
+.img-text {
+  background: linear-gradient(to top, rgba(34, 34, 34, 0.95), rgba(255,255,255,0));
+  padding: 30px 20px 20px 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(110px);
+  transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+  color: #fff;
+  z-index: 2;
+}
+
+.single-img:hover .img-text {
+  transform: translateY(0);
+}
+
+.img-text h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  font-family: inherit;
+}
+
+.img-text p {
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.img-text button {
+  background: #252525;
+  color: #fff;
+  padding: 10px 35px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.img-text button:hover {
+  background: #fff;
+  color: #252525;
+}
+
+/* Responsive styles */
+@media (max-width: 991px) {
+  .service {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+  .single-img {
+    width: 90vw;
+    max-width: 350px;
+    margin-bottom: 30px;
+  }
+}
