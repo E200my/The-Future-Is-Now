@@ -111,3 +111,34 @@
     font-size: 1.6rem;
   }
 }
+/* Fundamental section */
+.vision-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+.fundamental-list {
+  list-style: disc inside;
+  padding-left: 0;
+  margin: 0;
+  color: #fff;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.fundamental-list li {
+  margin-bottom: 14px;
+}
+.fundamental-list strong {
+  color: #ffd700;
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .vision-content h2 {
+    font-size: 1.6rem;
+  }
+  .fundamental-list {
+    font-size: 1rem;
+  }
+}
+/* ...existing code... */
