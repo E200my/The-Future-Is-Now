@@ -3,83 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Donate Now - Clean Hearts</title>
+  <title>Wild Animals - Africa's Voice for Wildlife</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6c3483;
-      --accent: #ffd700;
-      --bg: #f8f6fa;
-      --white: #fff;
-      --gray: #f2f2f2;
-      --text: #222;
-      --border: #e5e5e5;
+      --main-bg: #3d2c22;
+      --card-bg: #fff;
+      --accent: #f6b93b;
+      --accent-dark: #e1a32a;
+      --gray-bg: #f5f5f5;
+      --green-bg: #a3b18a;
+      --radius: 18px;
+      --font-main: 'Montserrat', Arial, sans-serif;
+      --text-dark: #2d2d2d;
     }
     body {
-      font-family: 'Nunito', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: var(--main-bg);
+      font-family: var(--font-main);
+      color: var(--text-dark);
       margin: 0;
       padding: 0;
     }
-    header {
-      background: var(--primary);
-      color: var(--white);
-      padding: 0;
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 18px;
     }
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.95rem;
-      padding: 8px 32px;
-      background: #4b2354;
-    }
-    .top-bar .left, .top-bar .right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-    .top-bar .right a {
-      color: var(--white);
-      margin-left: 10px;
-      font-size: 1.1em;
-      text-decoration: none;
-    }
+    /* Header & Navbar */
     .navbar {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      margin: 32px auto 0 auto;
+      max-width: 1100px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 32px;
-      background: var(--primary);
+      padding: 0 32px;
+      min-height: 70px;
+      position: relative;
+      z-index: 10;
     }
-    .navbar .logo {
+    .navbar .brand {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+    .navbar .brand i {
+      color: var(--accent);
       font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--white);
-      text-decoration: none;
     }
     .navbar nav {
       display: flex;
       gap: 24px;
+      align-items: center;
     }
     .navbar nav a {
-      color: var(--white);
+      color: var(--text-dark);
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      transition: color 0.2s;
+      padding: 10px 18px;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
     }
+    .navbar nav a.active,
     .navbar nav a:hover {
-      color: var(--accent);
+      background: var(--accent);
+      color: var(--card-bg);
+    }
+    .navbar .search {
+      background: var(--gray-bg);
+      border: none;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 1rem;
+      margin-left: 10px;
     }
     .navbar .donate-btn {
       background: var(--accent);
-      color: var(--primary);
+      color: var(--card-bg);
       border: none;
       border-radius: 30px;
       padding: 10px 28px;
@@ -92,116 +100,50 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     }
     .navbar .donate-btn:hover {
-      background: #ffe066;
+      background: var(--accent-dark);
     }
-    .hero {
-      background: linear-gradient(rgba(108,52,131,0.7),rgba(108,52,131,0.7)), url('images/hero-bg.jpg') center/cover no-repeat;
-      color: var(--white);
-      text-align: center;
-      padding: 70px 20px 40px 20px;
+    /* Hero Section */
+    .hero-section {
+      background: url('images/rhino-hero.jpg') center/cover no-repeat;
+      border-radius: var(--radius);
+      max-width: 1100px;
+      margin: 24px auto 0 auto;
+      padding: 60px 32px 80px 32px;
       position: relative;
-    }
-    .hero h1 {
-      font-size: 2.7rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .breadcrumb {
-      color: var(--accent);
-      font-size: 1rem;
-      margin-top: 10px;
-    }
-    .main-content {
-      display: flex;
-      gap: 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      flex-wrap: wrap;
-    }
-    .donate-form-section {
-      background: var(--white);
-      border-radius: 12px;
+      color: #fff;
       box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      flex: 2 1 350px;
-      padding: 32px 24px;
-      min-width: 320px;
-      margin-bottom: 24px;
-    }
-    .donate-form-section .notice {
-      background: #fffbe6;
-      color: #b8860b;
-      border-radius: 6px;
-      padding: 10px 16px;
-      font-size: 1rem;
-      margin-bottom: 18px;
-      border: 1px solid #ffe066;
-    }
-    .donate-form {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      justify-content: center;
+      align-items: flex-start;
     }
-    .donate-form .amount-row {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(61,44,34,0.45);
+      border-radius: var(--radius);
+      z-index: 1;
     }
-    .donate-form .amount-btn {
-      background: var(--gray);
-      border: none;
-      border-radius: 20px;
-      padding: 10px 22px;
-      font-weight: 600;
-      color: var(--primary);
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.2s, color 0.2s;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
     }
-    .donate-form .amount-btn.active,
-    .donate-form .amount-btn:hover {
-      background: var(--primary);
-      color: var(--white);
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      line-height: 1.2;
     }
-    .donate-form .amount-input {
-      width: 100px;
-      padding: 10px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      font-size: 1rem;
-      text-align: center;
-      margin-left: 10px;
+    .hero-content p {
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+      line-height: 1.5;
     }
-    .donate-form .payment-method {
-      display: flex;
-      gap: 24px;
-      margin-bottom: 10px;
-    }
-    .donate-form .payment-method label {
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .donate-form .personal-info {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-    .donate-form .personal-info input {
-      flex: 1 1 140px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-    .donate-form .donate-submit-btn {
+    .hero-content .donate-btn {
       background: var(--accent);
-      color: var(--primary);
+      color: var(--card-bg);
       border: none;
       border-radius: 30px;
       padding: 12px 32px;
@@ -209,120 +151,304 @@
       font-size: 1.1rem;
       cursor: pointer;
       transition: background 0.2s;
-      margin-top: 10px;
+      text-decoration: none;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      width: 100%;
-      max-width: 220px;
-      align-self: flex-start;
+      display: inline-block;
     }
-    .donate-form .donate-submit-btn:hover {
-      background: #ffe066;
+    .hero-content .donate-btn:hover {
+      background: var(--accent-dark);
     }
-    .side-info {
-      flex: 1 1 320px;
-      min-width: 260px;
+    /* Projects Section */
+    .projects-section {
+      margin: 48px auto 0 auto;
+      max-width: 1100px;
+      text-align: center;
+    }
+    .projects-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--card-bg);
+      letter-spacing: 1px;
+    }
+    .projects-section .subtitle {
+      color: var(--accent);
+      font-size: 1.08rem;
+      margin-bottom: 28px;
+      letter-spacing: 0.5px;
+    }
+    .projects-list {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 0 0 24px 0;
+      width: 320px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      margin-bottom: 24px;
+      align-items: stretch;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
     }
-    .fund-card, .organizer-card {
-      background: var(--white);
-      border-radius: 12px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      padding: 24px 18px;
+    .project-card.highlight {
+      background: var(--accent);
+      color: var(--card-bg);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius) var(--radius) 0 0;
       margin-bottom: 0;
     }
-    .fund-card .progress-bar-bg {
-      background: var(--gray);
+    .project-card .project-content {
+      padding: 24px 18px 0 18px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .project-card .project-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 9px;
+    }
+    .project-card .project-desc {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .project-card .project-raised {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .project-card .progress-bar-bg {
+      background: #eee;
       border-radius: 10px;
-      height: 14px;
+      height: 10px;
       width: 100%;
-      margin: 10px 0;
+      margin-bottom: 16px;
       position: relative;
       overflow: hidden;
     }
-    .fund-card .progress-bar-fill {
-      background: var(--accent);
+    .project-card .progress-bar-fill {
+      background: var(--accent-dark);
       height: 100%;
       border-radius: 10px;
-      width: 70%;
+      width: 80%;
       transition: width 0.5s;
     }
-    .fund-card .fund-details {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.98rem;
-      margin-bottom: 8px;
-    }
-    .fund-card .fund-title {
-      font-weight: 700;
-      margin-bottom: 8px;
-      font-size: 1.1rem;
-    }
-    .fund-card .donation-details-btn {
+    .project-card .learn-btn {
       background: var(--accent);
-      color: var(--primary);
+      color: var(--card-bg);
       border: none;
-      border-radius: 30px;
+      border-radius: 20px;
       padding: 8px 22px;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
       transition: background 0.2s;
+      text-decoration: none;
+      display: inline-block;
       margin-top: 10px;
+    }
+    .project-card .learn-btn:hover {
+      background: var(--accent-dark);
+    }
+    /* Voice Section */
+    .voice-section {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      border-radius: var(--radius);
+      background: var(--green-bg);
+      color: var(--card-bg);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      min-height: 260px;
+    }
+    .voice-img {
+      flex: 1;
+      min-width: 220px;
+      height: 100%;
+      background: url('images/cheetah.jpg') center/cover no-repeat;
+      min-height: 220px;
+    }
+    .voice-content {
+      flex: 2;
+      padding: 36px 32px;
+    }
+    .voice-content h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .voice-content p {
+      font-size: 1.08rem;
+      margin-bottom: 18px;
+      line-height: 1.6;
+    }
+    .voice-content .about-btn {
+      background: var(--accent);
+      color: var(--card-bg);
+      border: none;
+      border-radius: 20px;
+      padding: 10px 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
       text-decoration: none;
       display: inline-block;
     }
-    .fund-card .donation-details-btn:hover {
-      background: #ffe066;
+    .voice-content .about-btn:hover {
+      background: var(--accent-dark);
     }
-    .organizer-card .organizer-info {
+    /* News Section */
+    .news-section {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      padding: 32px 24px;
+    }
+    .news-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      color: var(--main-bg);
+    }
+    .news-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .news-card {
+      background: var(--gray-bg);
+      border-radius: 12px;
+      padding: 16px;
       display: flex;
-      align-items: center;
-      gap: 12px;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .news-card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: #ccc;
+    }
+    .news-card .news-type {
+      background: var(--accent);
+      color: var(--main-bg);
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 2px 12px;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+    .news-card .news-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+    .news-card .news-date {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 6px;
+    }
+    /* Diversity Section */
+    .diversity-section {
+      max-width: 1100px;
+      margin: 40px auto 0 auto;
+      background: var(--accent);
+      border-radius: var(--radius);
+      color: var(--main-bg);
+      padding: 32px 24px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .diversity-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
       margin-bottom: 10px;
     }
-    .organizer-card .organizer-img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--gray);
-      object-fit: cover;
+    .diversity-section p {
+      font-size: 1.07rem;
+      margin-bottom: 24px;
     }
-    .organizer-card .organizer-name {
-      font-weight: 700;
-      font-size: 1rem;
+    .diversity-list {
+      display: flex;
+      gap: 22px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
-    .organizer-card .organizer-location {
-      font-size: 0.95rem;
-      color: #888;
-    }
-    .organizer-card .organizer-address {
-      font-size: 0.98rem;
-      color: #444;
-      margin-left: 60px;
-    }
-    .subscribe-section {
-      background: var(--primary);
-      color: var(--white);
-      padding: 40px 20px;
+    .diversity-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 14px 12px;
       text-align: center;
-      margin-top: 40px;
-      position: relative;
+      min-width: 120px;
+      max-width: 180px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      font-weight: 700;
+      color: var(--main-bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .subscribe-section input[type="email"] {
+    .diversity-card img {
+      width: 100%;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: #ccc;
+    }
+    /* Subscribe Section */
+    .subscribe-section {
+      max-width: 600px;
+      margin: 40px auto 0 auto;
+      text-align: center;
+      color: var(--card-bg);
+    }
+    .subscribe-section label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .subscribe-form {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .subscribe-form input[type="email"] {
       padding: 12px 18px;
       border-radius: 30px;
       border: none;
       font-size: 1rem;
-      margin-right: 10px;
-      width: 260px;
+      width: 220px;
       max-width: 80vw;
     }
-    .subscribe-section button {
+    .subscribe-form button {
       background: var(--accent);
-      color: var(--primary);
+      color: var(--main-bg);
       border: none;
       border-radius: 30px;
       padding: 12px 28px;
@@ -331,299 +457,337 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .subscribe-section button:hover {
-      background: #ffe066;
+    .subscribe-form button:hover {
+      background: var(--accent-dark);
     }
-    footer {
-      background: var(--white);
-      color: var(--primary);
-      padding: 40px 20px 20px 20px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-content {
+    .subscribe-icons {
+      margin-top: 20px;
       display: flex;
-      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+    }
+    .subscribe-icons a {
+      color: var(--accent);
+      font-size: 1.4rem;
+      transition: color 0.2s;
+    }
+    .subscribe-icons a:hover {
+      color: var(--main-bg);
+    }
+    /* Footer */
+    footer {
+      color: var(--card-bg);
+      background: none;
+      padding: 32px 24px 18px 24px;
+      text-align: center;
+      font-size: 1rem;
+    }
+    .footer-links {
+      display: flex;
       gap: 32px;
-      max-width: 1200px;
-      margin: 0 auto;
-      justify-content: space-between;
-    }
-    .footer-section {
-      flex: 1 1 180px;
-      min-width: 180px;
-      margin-bottom: 18px;
-    }
-    .footer-section h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--primary);
-    }
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .footer-section ul li {
+      justify-content: center;
+      margin-top: 12px;
       margin-bottom: 8px;
+      flex-wrap: wrap;
     }
-    .footer-section ul li a {
-      color: var(--primary);
+    .footer-links a {
+      color: var(--card-bg);
       text-decoration: none;
+      font-weight: 600;
       font-size: 1rem;
       transition: color 0.2s;
     }
-    .footer-section ul li a:hover {
+    .footer-links a:hover {
       color: var(--accent);
     }
-    .footer-gallery {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .footer-gallery img {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      object-fit: cover;
-      background: var(--gray);
-    }
-    .footer-bottom {
-      text-align: center;
+    .footer-address {
+      margin-top: 10px;
       font-size: 0.95rem;
-      color: #888;
-      margin-top: 18px;
+      color: #e5e5e5;
+    }
+    .footer-copy {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #e5e5e5;
+    }
+    /* Responsive Styles */
+    @media (max-width: 1100px) {
+      .navbar, .hero-section, .projects-section, .voice-section, .news-section, .diversity-section {
+        max-width: 98vw;
+        padding-left: 4vw;
+        padding-right: 4vw;
+      }
+      .projects-list, .diversity-list {
+        gap: 18px;
+      }
     }
     @media (max-width: 900px) {
-      .main-content {
+      .navbar {
         flex-direction: column;
-        gap: 0;
-        padding: 20px 8px;
+        align-items: flex-start;
+        padding: 12px 10px;
       }
-      .donate-form-section, .side-info {
-        min-width: 0;
+      .navbar nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .hero-section {
+        padding: 40px 10px 50px 10px;
+      }
+      .projects-list, .diversity-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .voice-section {
+        flex-direction: column;
+        min-height: 0;
+      }
+      .voice-img {
         width: 100%;
-        margin-bottom: 18px;
-        padding: 18px 8px;
+        min-height: 180px;
+        height: 180px;
       }
-      .footer-content {
-        flex-direction: column;
-        gap: 0;
+      .voice-content {
+        padding: 24px 10px;
       }
-      .footer-section {
-        margin-bottom: 18px;
+      .news-section {
+        padding: 18px 6px;
       }
-      .subscribe-section input[type="email"] {
-        width: 90vw;
-        margin-bottom: 10px;
+      .diversity-section {
+        padding: 18px 6px;
+      }
+      .subscribe-section {
+        padding: 10px 6px;
       }
     }
     @media (max-width: 600px) {
-      .navbar, .top-bar {
-        padding: 8px 10px;
+      .navbar {
+        padding: 8px 2px;
+        min-height: 0;
       }
-      .hero {
-        padding: 40px 8px 20px 8px;
+      .hero-section {
+        padding: 24px 2px 20px 2px;
       }
-      .hero h1 {
-        font-size: 1.5rem;
+      .hero-content h1 {
+        font-size: 1.3rem;
       }
-      .main-content {
-        padding: 10px 2px;
+      .projects-section h2 {
+        font-size: 1.2rem;
       }
-      .donate-form-section, .side-info {
-        padding: 10px 2px;
+      .project-card {
+        width: 98vw;
+        min-width: 0;
       }
-      .footer-content, .footer-section {
-        padding: 0;
+      .voice-content h3 {
+        font-size: 1.1rem;
+      }
+      .news-section h2 {
+        font-size: 1.1rem;
+      }
+      .news-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .diversity-card {
+        min-width: 80px;
+        max-width: 98vw;
+      }
+      .footer-links {
+        gap: 10px;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="top-bar">
-      <div class="left">
-        <span><i class="fa fa-envelope"></i> info.com@gmail.com</span>
-        <span><i class="fa fa-map-marker-alt"></i> 85 Keith Harbore Road, Bethlehem, PA 19020</span>
-      </div>
-      <div class="right">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-    </div>
-    <div class="navbar">
-      <a href="#" class="logo"><i class="fa fa-heart"></i> Clean Hearts</a>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Donation</a>
-        <a href="#">Pages</a>
-        <a href="#">Events</a>
-        <a href="#">Shop</a>
-        <a href="#">News</a>
-        <a href="#">Contact Us</a>
-      </nav>
-      <a href="#" class="donate-btn">Donate Now</a>
-    </div>
-  </header>
-  <section class="hero">
-    <h1>Donate Now</h1>
-    <div class="breadcrumb">Home &gt; Donate Now</div>
-  </section>
-  <div class="main-content">
-    <section class="donate-form-section">
-      <div class="notice">
-        <strong>Notice:</strong> Test Mode Is Enabled. While In Test Mode No Live Donations Are Processed.
-      </div>
-      <form class="donate-form" id="donateForm">
-        <label for="donationAmount" style="font-weight:700;">Donation Amount</label>
-        <div class="amount-row">
-          <button type="button" class="amount-btn" data-amount="25">$25</button>
-          <button type="button" class="amount-btn" data-amount="50">$50</button>
-          <button type="button" class="amount-btn" data-amount="75">$75</button>
-          <button type="button" class="amount-btn" data-amount="99">$99</button>
-          <button type="button" class="amount-btn" data-amount="200">$200</button>
-          <input type="number" class="amount-input" id="customAmount" min="1" placeholder="Custom Amount">
-        </div>
-        <label style="font-weight:700;">Select Payment Method</label>
-        <div class="payment-method">
-          <label><input type="radio" name="payment" value="test" checked> Test Donation</label>
-          <label><input type="radio" name="payment" value="offline"> Offline Donation</label>
-        </div>
-        <label style="font-weight:700;">Personal Info</label>
-        <div class="personal-info">
-          <input type="text" name="firstName" placeholder="First Name" required>
-          <input type="text" name="lastName" placeholder="Last Name" required>
-        </div>
-        <input type="email" name="email" placeholder="Email Address" required>
-        <button type="submit" class="donate-submit-btn">Donate Now</button>
-      </form>
-    </section>
-    <aside class="side-info">
-      <div class="fund-card">
-        <div class="fund-title">Raise Funds For Clean & Healthy Food</div>
-        <div class="fund-details">
-          <span>Raised $8,050</span>
-          <span>Goal $10,000</span>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" style="width:70%"></div>
-        </div>
-        <a href="#" class="donation-details-btn">Donation Details</a>
-      </div>
-      <div class="organizer-card">
-        <div class="organizer-info">
-          <img src="images/organizer.jpg" alt="Organizer" class="organizer-img">
-          <div>
-            <div class="organizer-name">Elyse A. Phillips</div>
-            <div class="organizer-location">Walkers Ridge</div>
-          </div>
-        </div>
-        <div class="organizer-address"><i class="fa fa-map-marker-alt"></i> 350 5th Ave, New York</div>
-      </div>
-    </aside>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="brand"><i class="fa-solid fa-paw"></i> WILD ANIMALS</div>
+    <nav>
+      <a href="#" class="active">Home</a>
+      <a href="#">Our Work</a>
+      <a href="#">About Us</a>
+      <a href="#">News</a>
+      <a href="#">Contacts</a>
+      <input class="search" type="text" placeholder="Search...">
+      <a href="#" class="donate-btn">Donate</a>
+    </nav>
   </div>
-  <section class="subscribe-section">
-    <h2>Subscribe Now</h2>
-    <form id="subscribeForm">
-      <input type="email" placeholder="Enter Your Email" required>
-      <button type="submit">Subscribe Now <i class="fa fa-paper-plane"></i></button>
-    </form>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Africa’s Voice for Wildlife</h1>
+      <p>We’re working to ensure wildlife and wild lands thrive in modern Africa.</p>
+      <a href="#" class="donate-btn" id="donateMainBtn">Donate</a>
+    </div>
   </section>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h4><i class="fa fa-heart"></i> Clean Hearts</h4>
-        <p>Vimply Dummy Text Of The Printype Industry Orem Ipsum Has Maecenas Quis Eros At Ante</p>
-        <a href="#">View Map</a>
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <h2>Our Latest Projects</h2>
+    <div class="subtitle">
+      Our multi-faceted approach ensures conservation strategies work for wildlife and people.
+    </div>
+    <div class="projects-list">
+      <div class="project-card highlight">
+        <img src="images/fennec.jpg" alt="Wild Welfare Tunisia">
+        <div class="project-content">
+          <div class="project-title">Wild Welfare Tunisia</div>
+          <div class="project-desc">The lack of government regulations, experience and skills has resulted in more poorly managed facilities across the country.</div>
+          <div class="project-raised">$99,999 raised</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:90%"></div></div>
+          <a href="#" class="learn-btn">Learn More</a>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>Get in touch!</h4>
-        <ul>
-          <li>901 N Pitt Str, Suite 170 Alexandria, USA</li>
-          <li><i class="fa fa-phone"></i> (406) 555-0120</li>
-          <li><i class="fa fa-envelope"></i> info@cleanheart.com</li>
-        </ul>
+      <div class="project-card">
+        <img src="images/zebra.jpg" alt="Zebra Fund">
+        <div class="project-content">
+          <div class="project-title">Zebra Fund</div>
+          <div class="project-desc">The lack of government regulations, experience and skills has resulted in more poorly managed facilities across the country.</div>
+          <div class="project-raised">$99,999 raised</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:80%"></div></div>
+          <a href="#" class="learn-btn">Learn More</a>
+        </div>
       </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Give Donation</a></li>
-          <li><a href="#">Education Support</a></li>
-          <li><a href="#">Our Campaign</a></li>
-          <li><a href="#">Contact us</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h4>Our Gallery</h4>
-        <div class="footer-gallery">
-          <img src="images/gallery1.jpg" alt="Gallery">
-          <img src="images/gallery2.jpg" alt="Gallery">
-          <img src="images/gallery3.jpg" alt="Gallery">
-          <img src="images/gallery4.jpg" alt="Gallery">
-          <img src="images/gallery5.jpg" alt="Gallery">
-          <img src="images/gallery6.jpg" alt="Gallery">
+      <div class="project-card">
+        <img src="images/cheetah-card.jpg" alt="Stop the Trafficking">
+        <div class="project-content">
+          <div class="project-title">Stop the Trafficking</div>
+          <div class="project-desc">The lack of government regulations, experience and skills has resulted in more poorly managed facilities across the country.</div>
+          <div class="project-raised">$99,999 raised</div>
+          <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:70%"></div></div>
+          <a href="#" class="learn-btn">Learn More</a>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      &copy; Copyright 2023 Company.com All Rights Reserved
+  </section>
+  <!-- Voice Section -->
+  <section class="voice-section">
+    <div class="voice-img"></div>
+    <div class="voice-content">
+      <h3>We are a voice for all animals that share our world.</h3>
+      <p>We receive no government grants and rely on the generosity of our supporters to continue our vital work for animals.</p>
+      <a href="#" class="about-btn">More About Us</a>
+    </div>
+  </section>
+  <!-- News Section -->
+  <section class="news-section">
+    <h2>Latest News</h2>
+    <div class="news-list">
+      <div class="news-card">
+        <img src="images/elephant-news.jpg" alt="Elephant News">
+        <span class="news-type">FEATURE</span>
+        <div class="news-title">Joining Up For The Benefit Of Elephants</div>
+        <div class="news-date">November 22, 2022</div>
+      </div>
+      <div class="news-card">
+        <img src="images/tiger-news.jpg" alt="Tiger News">
+        <span class="news-type">NEWS</span>
+        <div class="news-title">We're Hiring – Communications Manager</div>
+        <div class="news-date">November 18, 2022</div>
+      </div>
+      <div class="news-card">
+        <img src="images/welfare-news.jpg" alt="Animal Welfare">
+        <span class="news-type">ARTICLE</span>
+        <div class="news-title">Successful Strategies For Animal Welfare Improvements</div>
+        <div class="news-date">November 22, 2022</div>
+      </div>
+      <div class="news-card">
+        <img src="images/camel-news.jpg" alt="Camel Care">
+        <span class="news-type">ARTICLE</span>
+        <div class="news-title">Camel Care and Welfare – What’s it all about?</div>
+        <div class="news-date">November 20, 2022</div>
+      </div>
+    </div>
+  </section>
+  <!-- Diversity Section -->
+  <section class="diversity-section">
+    <h3>Protecting an astounding diversity of species.</h3>
+    <p>Our multi-faceted approach ensures conservation strategies work for wildlife and people.</p>
+    <div class="diversity-list">
+      <div class="diversity-card">
+        <img src="images/wildlife.jpg" alt="Wildlife">
+        Wildlife
+      </div>
+      <div class="diversity-card">
+        <img src="images/land.jpg" alt="Land">
+        Land
+      </div>
+      <div class="diversity-card">
+        <img src="images/community.jpg" alt="Community">
+        Community
+      </div>
+      <div class="diversity-card">
+        <img src="images/leadership.jpg" alt="Leadership">
+        Leadership
+      </div>
+    </div>
+  </section>
+  <!-- Subscribe Section -->
+  <section class="subscribe-section">
+    <label for="subscribeEmail">Stay in Touch</label>
+    <form class="subscribe-form" id="subscribeForm">
+      <input type="email" id="subscribeEmail" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="subscribe-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">Our Work</a>
+      <a href="#">About Us</a>
+      <a href="#">News</a>
+      <a href="#">Contacts</a>
+    </div>
+    <div class="footer-address">
+      Wild Animals <br>
+      Bound Faber St Station Road, East Sussex, GB<br>
+    </div>
+    <div class="footer-copy">
+      &copy; This is a sample website • commitment © 2022 • All Rights Reserved.
     </div>
   </footer>
   <script>
-    // Donation Amount Button Logic
-    const amountBtns = document.querySelectorAll('.amount-btn');
-    const customAmount = document.getElementById('customAmount');
-    let selectedAmount = null;
-
-    amountBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        amountBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        customAmount.value = '';
-        selectedAmount = btn.getAttribute('data-amount');
-      });
-    });
-
-    customAmount.addEventListener('input', function() {
-      amountBtns.forEach(b => b.classList.remove('active'));
-      selectedAmount = customAmount.value;
-    });
-
-    document.getElementById('donateForm').addEventListener('submit', function(e) {
+    // Donate Button
+    document.getElementById('donateMainBtn').onclick = function(e) {
       e.preventDefault();
-      const payment = document.querySelector('input[name="payment"]:checked').value;
-      const firstName = this.firstName.value.trim();
-      const lastName = this.lastName.value.trim();
-      const email = this.email.value.trim();
-      const amount = selectedAmount || customAmount.value;
-      if (!amount || amount <= 0) {
-        alert('Please select or enter a valid donation amount.');
-        return;
-      }
-      if (!firstName || !lastName || !email) {
-        alert('Please fill in all personal info fields.');
-        return;
-      }
-      alert(`Thank you, ${firstName}! Your donation of $${amount} (${payment}) has been received.`);
-      this.reset();
-      amountBtns.forEach(b => b.classList.remove('active'));
-      selectedAmount = null;
+      alert('Thank you for your interest in donating!');
+    };
+    // Learn More Buttons
+    document.querySelectorAll('.learn-btn').forEach(btn => {
+      btn.onclick = function(e) {
+        e.preventDefault();
+        alert('Learn more about this project!');
+      };
     });
-
-    // Subscribe Button Logic
-    document.getElementById('subscribeForm').addEventListener('submit', function(e) {
+    // About Us Button
+    document.querySelector('.about-btn').onclick = function(e) {
       e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value.trim();
+      alert('More about us!');
+    };
+    // Subscribe Form
+    document.getElementById('subscribeForm').onsubmit = function(e) {
+      e.preventDefault();
+      const email = document.getElementById('subscribeEmail').value.trim();
       if (!email) {
-        alert('Please enter your email address.');
+        alert('Please enter your email.');
         return;
       }
       alert('Thank you for subscribing!');
       this.reset();
+    };
+    // Social Icons
+    document.querySelectorAll('.subscribe-icons a').forEach(icon => {
+      icon.onclick = function(e) {
+        e.preventDefault();
+        alert('Social link clicked!');
+      };
     });
   </script>
 </body>
