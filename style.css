@@ -6,62 +6,113 @@
   box-sizing: border-box;
 }
 
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 32px;
-  background: var(--primary);
-  flex-wrap: wrap;
+/* Clean, responsive navbar styles */
+
+:root{
+  /*--accent: #198754;*/
+  --bg-light: purple;
+  --nav-shadow: #ffd700 0px 4px 15px ;
+  --radius: 14px;
+  --text: #fff;
 }
 
-nav .logo {
-  display: flex;
+/* wrapper styling matching original but consistent */
+.nav-wrap{
+  background: var(--bg-light);
+  box-shadow: var(--nav-shadow);
   align-items: center;
-  gap: 10px;
-  font-size: 1.5rem;
+}
+
+/* Brand */
+.brand-img{
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+.brand-text{
   font-weight: 700;
-  color: var(--white);
-  text-decoration: none;
+  color: var(--text);
+  font-size: 1.05rem;
 }
 
-nav .nav-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-nav .nav-links a {
-  color: var(--white);
-  text-decoration: none;
+/* Navbar links */
+.navbar .nav-link{
+  color: var(--text);
   font-weight: 600;
-  font-size: 1rem;
-  transition: color 0.2s;
-  padding: 6px 10px;
-  border-radius: 20px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .15s, color .15s, transform .12s;
 }
-
-nav .nav-links a:hover,
-nav .nav-links .donate-btn:hover {
+.navbar .nav-link:hover,
+.navbar .nav-link.active{
+  background: rgba(25,135,84,0.12);
   color: var(--accent);
-  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-1px);
 }
 
-nav .donate-btn {
+/* Contact button */
+.contact-btn{
   background: var(--accent);
-  color: var(--primary);
-  border: none;
+  color: #fff;
   border-radius: 30px;
-  padding: 10px 28px;
+  padding: 8px 16px;
   font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  text-decoration: none;
-  margin-left: 18px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  border: none;
+  box-shadow: 0 4px 12px rgba(25,135,84,0.12);
 }
+.contact-btn:hover{
+  background: #6c3483;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Toggler icon color (uses bootstrap SVG which respects currentColor) */
+.navbar-toggler{
+  border: none;
+  color: var(--text);
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+/* Small screens: center collapsed links and spacing */
+@media (max-width: 991.98px){
+  .navbar .navbar-collapse{
+    background: transparent;
+    padding-top: 12px;
+  }
+  .navbar-nav{
+    gap: 8px;
+  }
+  .nav-wrap{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .contact-btn{
+    margin-top: 8px;
+  }
+}
+
+/* Very small screens: compact brand */
+@media (max-width: 576px){
+  .brand-text{
+    font-size: 0.98rem;
+  }
+  .brand-img{
+    height: 30px;
+  }
+  .nav-wrap{
+    padding: 8px;
+  }
+  .nav-link{
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Optional utility to keep navbar visible on top (if desired) */
+/* header { position: sticky; top: 12px; z-index: 1050; } */
 
 :root {
   --primary: #6c3483;
@@ -69,7 +120,7 @@ nav .donate-btn {
   --bg: #f8f6fa;
   --white: #fff;
   --gray: #f2f2f2;
-  --text: #222;
+  --text: #fff;
   --border: #e5e5e5;
   --radius: 18px;
   --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);

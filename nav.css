@@ -1,0 +1,107 @@
+/* Clean, responsive navbar styles */
+
+:root{
+  --accent: #198754;
+  --bg-light: rgba(238,242,249,0.3);
+  --nav-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  --radius: 14px;
+  --text: #222;
+}
+
+/* wrapper styling matching original but consistent */
+.nav-wrap{
+  background: var(--bg-light);
+  box-shadow: var(--nav-shadow);
+  align-items: center;
+}
+
+/* Brand */
+.brand-img{
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+.brand-text{
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* Navbar links */
+.navbar .nav-link{
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .15s, color .15s, transform .12s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active{
+  background: rgba(25,135,84,0.12);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Contact button */
+.contact-btn{
+  background: var(--accent);
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 12px rgba(25,135,84,0.12);
+}
+.contact-btn:hover{
+  background: #157347;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Toggler icon color (uses bootstrap SVG which respects currentColor) */
+.navbar-toggler{
+  border: none;
+  color: var(--text);
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+/* Small screens: center collapsed links and spacing */
+@media (max-width: 991.98px){
+  .navbar .navbar-collapse{
+    background: transparent;
+    padding-top: 12px;
+  }
+  .navbar-nav{
+    gap: 8px;
+  }
+  .nav-wrap{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .contact-btn{
+    margin-top: 8px;
+  }
+}
+
+/* Very small screens: compact brand */
+@media (max-width: 576px){
+  .brand-text{
+    font-size: 0.98rem;
+  }
+  .brand-img{
+    height: 30px;
+  }
+  .nav-wrap{
+    padding: 8px;
+  }
+  .nav-link{
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Optional utility to keep navbar visible on top (if desired) */
+/* header { position: sticky; top: 12px; z-index: 1050; } */
