@@ -6,22 +6,126 @@
   box-sizing: border-box;
 }
 
-.navbar .navbar-nav .nav-item a {
-  padding: 15px;
-}
+/* Clean, responsive navbar styles */
 
-.navbar .navbar-nav .nav-but {
-  padding: 10px;
+:root{
+  /*--accent: #198754;*/
+  --bg-light: purple;
+  --nav-shadow: #ffd700 0px 4px 15px ;
+  --radius: 14px;
+  --text: #fff;
 }
 
 :root {
-  --main-color: #7c96d1;
+    --primary: #6c3483;
+    --accent: #ffd700;
+    --bg: #f8f6fa;
+    --white: #fff;
+    --gray: #f2f2f2;
+    --text: #fff;
+    --border: #e5e5e5;
 }
 
-.theme-text {
-  color: var(--main-color);
+:root {
+    --main-color: #ffd700;
+}
+/* wrapper styling matching original but consistent */
+.nav-wrap{
+  background: var(--bg-light);
+  box-shadow: var(--nav-shadow);
+  align-items: center;
 }
 
+/* Brand */
+.brand-img{
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+.brand-text{
+  font-weight: 700;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+/* Navbar links */
+.navbar .nav-link{
+  color: var(--text);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background .15s, color .15s, transform .12s;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active{
+  background: rgba(25,135,84,0.12);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Contact button */
+.contact-btn{
+  background: var(--accent);
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 12px rgba(25,135,84,0.12);
+}
+.contact-btn:hover{
+  background: #6c3483;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Toggler icon color (uses bootstrap SVG which respects currentColor) */
+.navbar-toggler{
+  border: none;
+  color: var(--text);
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+/* Small screens: center collapsed links and spacing */
+@media (max-width: 991.98px){
+  .navbar .navbar-collapse{
+    background: transparent;
+    padding-top: 12px;
+  }
+  .navbar-nav{
+    gap: 8px;
+  }
+  .nav-wrap{
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .contact-btn{
+    margin-top: 8px;
+  }
+}
+
+/* Very small screens: compact brand */
+@media (max-width: 576px){
+  .brand-text{
+    font-size: 0.98rem;
+  }
+  .brand-img{
+    height: 30px;
+  }
+  .nav-wrap{
+    padding: 8px;
+  }
+  .nav-link{
+    padding: 8px 10px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Optional utility to keep navbar visible on top (if desired) */
+/* header { position: sticky; top: 12px; z-index: 1050; } */
 .header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
     url(images/Nigerian-children\ \(1\).png);

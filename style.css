@@ -1113,7 +1113,7 @@
 
 .events-section .events-btn:hover {
   background: var(--primary-dark);
-  color: var(--text);
+  color: var(--primary);
 }
 
 /* people green container start  */
